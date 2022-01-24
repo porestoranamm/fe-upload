@@ -42,3 +42,8 @@ body {
     box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
