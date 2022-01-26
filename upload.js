@@ -4,4 +4,6 @@ export function upload(selector) {
     const open = document.createElement('button')
     open.classList.add('btn')
     open.textContent = 'Открыть'
+
+    input.insertAdjacentElement('afterend')
 }
