@@ -5,5 +5,9 @@ export function upload(selector) {
     open.classList.add('btn')
     open.textContent = 'Открыть'
 
-    input.insertAdjacentElement('afterend')
+    input.insertAdjacentElement('afterend', open)
+
+    const triggerInput = () => input.click()
+
+    open.addEventListener('click', triggerInput)
 }
