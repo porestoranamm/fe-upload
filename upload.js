@@ -33,6 +33,7 @@ export function upload(selector, {} = {}) {
 
             reader.onload = ev => {
                 console.log(ev)
+                input.insertAdjacentHTML('afterend', '<img src="${ev.target.result}" />')
             }
 
             reader.readAsDataURL(file)
