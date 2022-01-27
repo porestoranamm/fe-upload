@@ -35,10 +35,12 @@ export function upload(selector, {} = {}) {
 
             const reader = new FileReader()
 
+            preview.innerHTML = ''
             reader.onload = ev => {
                 const src = ev.target.result
                 preview.insertAdjacentHTML('afterbegin', `
                 <div class="preview-image">
+                <div class="preview-remove">&times;</div>
                     <img src="${src}" alt="${file.name}" />
                 </div>
                 `)
