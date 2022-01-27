@@ -18,7 +18,12 @@ export function upload(selector, {} = {}) {
     const triggerInput = () => input.click()
 
     const changeHandler = event => {
-        console.log(event)
+        if (!event.target.files.length) {
+            return
+        }
+
+        const {files} = event.target
+        
     }
 
     open.addEventListener('click', triggerInput)
