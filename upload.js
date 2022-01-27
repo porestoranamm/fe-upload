@@ -74,6 +74,9 @@ export function upload(selector, {} = {}) {
         files = files.filter(file => file.name !== name)
 
         const block = preview.querySelector(`[data-name="${name}"]`)
+        .closest('.preview-image')
+
+        block.remove()
     }
 
     open.addEventListener('click', triggerInput)
