@@ -91,9 +91,9 @@ input[type=file] {
 .preview-info {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: 4px;
     left: 0;
-    height: 25px;
+    height: 24px;
     font-size: .8rem;
     background: rgba(255, 255, 255, .5);
     display: flex;
