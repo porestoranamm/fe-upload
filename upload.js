@@ -1,5 +1,8 @@
 export function upload(selector, {} = {}) {
     const input = document.querySelector(selector)
+    const preview = document.createElement('div')
+
+    preview.classList.add('preview')
 
     const open = document.createElement('button')
     open.classList.add('btn')
@@ -13,6 +16,7 @@ export function upload(selector, {} = {}) {
         input.serAttribute('accept', options.accept.join(','))
     }
 
+    input.insertAdjacentElement('afterend', preview)
     input.insertAdjacentElement('afterend', open)
 
     const triggerInput = () => input.click()
