@@ -9,6 +9,10 @@ export function upload(selector, {} = {}) {
         input.setAttribute('multiple', true)
     }
 
+    if (options.accept && Array.isArray(options.accept)) {
+        input.serAttribute('accept', options.accept.join(','))
+    }
+
     input.insertAdjacentElement('afterend', open)
 
     const triggerInput = () => input.click()
