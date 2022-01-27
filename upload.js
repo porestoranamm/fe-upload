@@ -8,6 +8,7 @@ function bytesToSize(bytes) {
 }
 
 export function upload(selector, {} = {}) {
+    let files = []
     const input = document.querySelector(selector)
     const preview = document.createElement('div')
 
@@ -35,7 +36,7 @@ export function upload(selector, {} = {}) {
             return
         }
 
-        const files = Array.from(event.target.files)
+        files = Array.from(event.target.files)
 
         files.forEach(file => {
             if (!file.type.match('image')) {
@@ -49,7 +50,7 @@ export function upload(selector, {} = {}) {
                 const src = ev.target.result
                 preview.insertAdjacentHTML('afterbegin', `
                 <div class="preview-image">
-                <div class="preview-remove">&times;</div>
+                <div class="preview-remove" data-name="${file.name}>&times;</div>
                     <img src="${src}" alt="${file.name}" />
                 <div class="preview-info">
                         <span>${file.name}</span>
@@ -64,6 +65,18 @@ export function upload(selector, {} = {}) {
 
     }
 
+    const removeHandler = event => {
+        if (!event.target.dataset.name) {
+            return
+        }
+
+        const {name} = event.target.dataset
+        files = files.filter(file => file.name !== name)
+
+        const block = preview.querySelector(`[data-name="${name}"]`)
+    }
+
     open.addEventListener('click', triggerInput)
     input.addEventListener('change', changeHandler)
+    preview.addEventListener('click', removeHandler)
 }
