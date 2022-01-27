@@ -9,5 +9,10 @@ export function upload(selector) {
 
     const triggerInput = () => input.click()
 
+    const changeHandler = event => {
+        console.log(event)
+    }
+
     open.addEventListener('click', triggerInput)
+    input.addEventListener('change', changeHandler)
 }
