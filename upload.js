@@ -78,7 +78,7 @@ export function upload(selector, {} = {}) {
         .closest('.preview-image')
 
         block.classList.add('removing')
-        block.remove()
+        setTimeout(() => block.remove(), 300)
     }
 
     open.addEventListener('click', triggerInput)
