@@ -73,9 +73,11 @@ export function upload(selector, {} = {}) {
         const {name} = event.target.dataset
         files = files.filter(file => file.name !== name)
 
-        const block = preview.querySelector(`[data-name="${name}"]`)
+        const block = preview
+        .querySelector(`[data-name="${name}"]`)
         .closest('.preview-image')
 
+        block.classList.add('removing')
         block.remove()
     }
 
