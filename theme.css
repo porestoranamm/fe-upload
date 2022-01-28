@@ -61,6 +61,12 @@ input[type=file] {
     position: relative;
     margin-bottom: .5rem;
     margin-right: .5rem;
+    overflow: hidden;
+}
+
+.preview-image.removing {
+    transform: scale(0);
+    transition: transform .3s;
 }
 
 .preview-image img {
@@ -70,6 +76,10 @@ input[type=file] {
 
 .preview-image:hover .preview-remove {
     opacity: 1;
+}
+
+.preview-image:hover .preview-info {
+    bottom: 4px;
 }
 
 .preview-remove {
@@ -91,7 +101,7 @@ input[type=file] {
 .preview-info {
     position: absolute;
     right: 0;
-    bottom: 4px;
+    bottom: -30px;
     left: 0;
     height: 24px;
     font-size: .8rem;
