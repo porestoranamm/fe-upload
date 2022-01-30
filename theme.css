@@ -114,5 +114,11 @@ input[type=file] {
 }
 
 .preview-info-progress {
-    
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: #42b983;
+    text-align: center;
+    transition: width .22s;
 }
