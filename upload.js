@@ -104,6 +104,8 @@ export function upload(selector, {} = {}) {
     }
 
     const uploadHandler = () => {
+        preview.querySelectorAll('.preview-remove').forEach(e => e.remove())
+        
         onUpload(files)
     }
 
