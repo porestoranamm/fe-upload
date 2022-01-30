@@ -104,6 +104,7 @@ export function upload(selector, {} = {}) {
     }
 
     const clearPreview = el => {
+        el.style.bottom = '4px'
         el.innerHTML = '<div class="preview-info progress"></div>'
     }
 
