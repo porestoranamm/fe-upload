@@ -21,8 +21,12 @@ const element = (tag, classes = [], content) => {
     return node
 }
 
+function noop() {}
+
+
 export function upload(selector, {} = {}) {
     let files = []
+    const onUpload = options.onUpload ?? noop
     const input = document.querySelector(selector)
     const preview = element('div', ['preview'])
     const open = element('button', ['btn'], 'Открыть')
@@ -100,7 +104,7 @@ export function upload(selector, {} = {}) {
     }
 
     const uploadHandler = () => {
-
+        onUpload(files)
     }
 
     open.addEventListener('click', triggerInput)
